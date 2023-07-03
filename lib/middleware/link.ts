@@ -35,8 +35,8 @@ export default async function LinkMiddleware(
     }
 
     if (password) {
-      // rewrite to auth page (/_auth/[domain]/[key]) if the link is password protected
-      return NextResponse.rewrite(new URL(`/_auth/${domain}/${key}`, req.url));
+      // rewrite to auth page (/$auth/[domain]/[key]) if the link is password protected
+      return NextResponse.rewrite(new URL(`/$auth/${domain}/${key}`, req.url));
     }
 
     const isBot = detectBot(req);
