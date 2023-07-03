@@ -26,6 +26,7 @@ export const config = {
 
 export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
   const { domain, path, key } = parse(req);
+  console.log({ domain, path, key });
 
   // for App (e.g. app.dub.sh)
   if (APP_HOSTNAMES.has(domain)) {
